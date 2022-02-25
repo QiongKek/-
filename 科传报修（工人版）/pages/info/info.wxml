@@ -1,0 +1,6 @@
+
+<van-cell-group>
+  <van-cell title="工号" value="2003670059" />
+  <van-cell title="性别" value="男" />
+  <van-cell title="姓名" value="张琼珂" />
+</van-cell-group>

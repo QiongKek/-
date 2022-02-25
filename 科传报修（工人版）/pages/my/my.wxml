@@ -1,0 +1,57 @@
+<view class="PageCont">
+    <view id="header" class="saa">
+      <view class="bg color-shadow-blur" style="background-color: #3c8ce7;"></view>  
+      <view class="cicle_bg" ></view>
+        <view class="cicle_bg"  style="animation-delay: 2s;"></view>
+        <view class="cicle_bg "   style="animation-delay: 4s;"></view>
+        <view class="my_box">
+            <view  bindtap="wxlogin">
+                <view class="nickname">
+                            <button style="background-color:transparent;font-size: 56rpx;" class='bottom' type='primary' open-type="getUserInfo" >
+                    {{name}}</button>
+                </view>
+                <view class="xueyuan"></view>             
+                </view>
+
+                
+            <view  class="avatar">
+              <open-data  wx:if="{{condition}}" class="nickname" type="userAvatarUrl"></open-data>
+                <!-- <van-image 
+                    round
+                    width="5rem"
+                    height="5rem"
+                    src="{{avatarurl}}"
+                    fit="cover"
+                    bindtap="toux"
+                    show-loading="{{false}}"
+                /> -->
+            </view>
+        </view>
+    </view>
+</view>
+
+<van-cell
+  is-link
+  title="我的信息"
+  link-type="navigateTo"
+  url="/pages/info/info"
+/>
+<van-cell
+  is-link
+  title="意见反馈"
+  bind:click="fback"
+/>
+<!-- 反馈 -->
+<van-dialog
+  use-slot
+  title="是否向开发者进行反馈？"
+  show="{{ show}}"
+  show-cancel-button
+  confirm-button-open-type="feedback"
+  bind:close="onClose"
+  bind:getuserinfo="getUserInfo"
+>
+</van-dialog>
+
+
+

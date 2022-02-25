@@ -1,0 +1,7 @@
+.btn{
+    margin-right: 2px;
+}
+.van-card{
+    margin-top: 10px ;
+    
+}

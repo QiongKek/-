@@ -1,0 +1,6 @@
+.cu-form-group .title {
+    /* min-width: calc(170rpx); */
+    min-width: calc(170rpx);
+  }
+  
+  

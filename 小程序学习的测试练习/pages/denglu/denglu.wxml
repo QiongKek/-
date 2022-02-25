@@ -1,0 +1,3 @@
+<button bindtap="login">授权登录</button>
+<view class="cu-avatar xl round margin-left" style="background-image:url({{tx}});"></view>
+<view>{{name}}</view>

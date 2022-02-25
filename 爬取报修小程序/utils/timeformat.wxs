@@ -1,0 +1,29 @@
+function formatTime(string) {
+    var publishTime = parseInt(string);
+    var date = getDate(publishTime);
+    var Y = date.getFullYear();
+    var M = date.getMonth() + 1;
+    var D = date.getDate();
+    var H = date.getHours();
+    var m = date.getMinutes();
+    var s = date.getSeconds();
+    if (M < 10) {
+        M = '0' + M
+    };
+    if (D < 10) {
+        D = '0' + D
+    };
+    if (H < 10) {
+        H = '0' + H
+    };
+    if (m < 10) {
+        m = '0' + m
+    };
+    if (s < 10) {
+        s = '0' + s
+    };
+    return (Y + '-' + M + '-' + D + ' ' + H + ':' + m)
+};
+module.exports = ({
+    format: formatTime,
+});

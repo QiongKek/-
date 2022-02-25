@@ -1,0 +1,45 @@
+<form bindreset="formReset" bindsubmit="formSubmit">
+    <view class="cu-form-group margin-top">
+        <view class="title">具体地址</view>
+        <input name="address" placeholder="输入需要维修的地址"></input>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">报修问题</view>
+        <input name="problem" placeholder="输入报修的具体问题"></input>
+    </view>
+    <view class="cu-form-group margin-top">
+        <view class="title">分类</view>
+        <view>已选{{cate}}</view>
+    </view>
+    <view class="cu-form-group margin-top">
+        <textarea disabled="{{modalName!=null}}" maxlength="-1" name="detail" placeholder="请输入备注"></textarea>
+    </view>
+
+
+ 
+
+
+<view class="cu-bar bg-white margin-top">
+  <view class="action">上传图片</view>
+  <view class="action">{{imgList.length}}/4</view>
+</view>
+<view class="cu-form-group">
+  <view class="grid col-3 grid-square flex-sub">
+    <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+      <image src='{{imgList[index]}}' mode='aspectFill'></image>
+      <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+        <text class="cuIcon-close"></text>
+      </view>
+    </view>
+    <view class="solids" bindtap="doUpload" wx:if="{{imgList.length<4}}">
+      <text class="cuIcon-cameraadd"></text>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+    <button bindtap="gettemplate" disabled="{{btndisabel}}" formType="submit" style="margin-top:80rpx;" type="primary">{{btndisabel?'已经提交':'提交'}}</button>
+</form>

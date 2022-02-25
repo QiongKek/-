@@ -1,0 +1,6 @@
+ <l-loadmore show="{{true}}" type="end" end-text="到底了" line/>
+ <!-- show:是否显示页底提示
+type:页底提示类型
+loading-text:加载中状态的文案
+end-text:加载完成状态的文案
+line:是否显示分割线 -->

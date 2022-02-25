@@ -1,0 +1,42 @@
+{
+  "pages":[
+    
+    "pages/index/index",
+    "pages/repair/repair",
+    "pages/login/login",
+    "pages/news/news"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#39b54a",
+    "backgroundTextStyle":"light",
+    "navigationBarTitleText": "科传报修",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#39b54a",  
+    "borderStyle": "white",  
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-fill.png"
+      },
+      {
+      "pagePath": "pages/repair/repair",
+      "text": "报修",
+      "iconPath": "images/baoxiu.png",
+      "selectedIconPath": "images/baoxiu-fill.png"
+    },
+    {
+      "pagePath": "pages/login/login",
+      "text": "我的",
+      "iconPath": "images/mine.png",
+      "selectedIconPath": "images/mine-fill.png"
+    }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
