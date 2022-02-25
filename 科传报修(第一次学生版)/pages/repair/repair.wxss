@@ -1,0 +1,9 @@
+.cu-form-group .title {
+  /* min-width: calc(170rpx); */
+  min-width: calc(170rpx);
+}
+
+.btn{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

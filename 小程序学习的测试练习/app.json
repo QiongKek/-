@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/denglu/denglu",
+    "pages/form/form",
+    "pages/mine/mine",
+    "pages/tupian/tupian",
+    "pages/ajax/ajax",
+    "pages/xx/xx",
+    "pages/wenzhang/wenzhang",
+    "pages/timechuo/timechuo",
+    "pages/picker/picker",
+    "pages/cr/cr",
+    "pages/copy/copy",
+    "pages/select/select",
+    "pages/lin/lin",
+    "pages/card/card",
+    "pages/swiper/swiper",
+    "pages/index/index",
+    "pages/repair/repair",
+    "pages/niu/niu"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "测试",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_selected.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_selected.png"
+      },
+      {
+        "pagePath": "pages/repair/repair",
+        "text": "报修",
+        "iconPath": "images/task.png",
+        "selectedIconPath": "images/task_selected.png"
+      },
+      {
+        "pagePath": "pages/swiper/swiper",
+        "text": "待定",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_selected.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

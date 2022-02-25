@@ -1,0 +1,79 @@
+<form bindreset="formReset" bindsubmit="formSubmit">
+    <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+        <view class="search-form round ">
+            <text class="cuIcon-search"></text>
+            <input confirmType="search" name="phone" placeholder="输入手机号" type="text"></input>
+        </view>
+        <button class="  " formType="submit" style="width:160rpx;font-size:28rpx">搜索</button>
+    </view>
+</form>
+<view style="margin-top:200rpx;"></view>
+<scroll-view scrollY class="DrawerPage {{modalName=='viewModal'?'show':''}}" style="margin-top:100rpx;">
+    <view class="text-gray" style="width:100%;text-align:center;margin-top:10rpx;">长按可设置管理员，清空输入框搜索可刷新数据</view>
+    <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+        <view class="cu-item ">
+            <view class="content useritem">
+                <view class="xu">序号</view>
+                <view class="name"> 头像</view>
+                <view class="name">姓名</view>
+                <view class="phone">电话</view>
+                <view class="name">权限</view>
+            </view>
+        </view>
+        <view class="cu-item " wx:for="{{userlist}}" wx:key="_id">
+            <view bindtap="showModal" catchlongtap="changeuser" class="content useritem" data-index="{{index}}" data-item="{{item}}" data-target="viewModal">
+                <view class="xu">{{index+1}}</view>
+                <view class="name">
+                    <image class="round img" src="{{item.userInfo.avatarUrl}}"></image>
+                </view>
+                <view class="name">{{item.username}}</view>
+                <view class="phone">{{item.phonenumber}}</view>
+                <view class="name">{{item.isAdmin?'管理员':'用户'}}</view>
+            </view>
+        </view>
+        <button bindtap="loadmore" class="loadmore shadow-wrap" wx:if="{{btnmore}}">查看更多</button>
+    </view>
+</scroll-view>
+<view bindtap="hideModal" class="DrawerClose {{modalName=='viewModal'?'show':''}}">
+    <text class="cuIcon-pullright"></text>
+</view>
+<scroll-view scrollY class="DrawerWindow {{modalName=='viewModal'?'show':''}}">
+    <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg" style="margin-top:200rpx;">
+        <view class="cu-item">
+            <view class="content">
+                <text class=" text-grey">昵称</text>
+                <text class="text-grey mar">{{userdetail.userInfo.nickName}}</text>
+            </view>
+        </view>
+        <view class="cu-item">
+            <view class="content">
+                <text class=" text-grey">年级</text>
+                <text class="text-grey mar">{{userdetail.grade}}</text>
+            </view>
+        </view>
+        <view class="cu-item">
+            <view class="content">
+                <text class=" text-grey">性别</text>
+                <text class="text-grey mar">{{userdetail.sex}}</text>
+            </view>
+        </view>
+        <view class="cu-item">
+            <view class="content">
+                <text class=" text-grey">学号</text>
+                <text class="text-grey mar">{{userdetail.studynumber}}</text>
+            </view>
+        </view>
+        <view class="cu-item">
+            <view class="content">
+                <text class=" text-grey">学院</text>
+                <text class="text-grey mar">{{userdetail.school}}</text>
+            </view>
+        </view>
+        <view class="cu-item">
+            <view class="content">
+                <text class=" text-grey">专业</text>
+                <text class="text-grey mar">{{userdetail.major}}</text>
+            </view>
+        </view>
+    </view>
+</scroll-view>

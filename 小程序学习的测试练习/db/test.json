@@ -1,0 +1,28 @@
+{
+  "swiper": [
+    {
+      "image_src": "http://wsfile.dahe.cn/image/jpeg/20211019/1634614705426437.jpg",
+      "id": 1
+    },
+    {
+      "image_src": "http://wsfile.dahe.cn/image/jpeg/20211019/1634614705426437.jpg",
+      "id": 2
+    },
+    {
+      "title": "这是我新添加的公告",
+      "text": "管理员实现添加公告",
+      "id": 3
+    },
+    {
+      "title": "这是我新添加的公告",
+      "text": "管理员实现添加公告",
+      "id": 4
+    }
+  ],
+  "new": [
+    {}
+  ],
+  "tp":[
+    {}
+  ]
+}

@@ -1,0 +1,3 @@
+<button bindtap="handlePost">提交</button>
+<button bindtap="handleDelete">删除</button>
+<button bindtap="handlePut">修改</button>

@@ -1,0 +1,87 @@
+<form bindsubmit="formSubmit">
+    <view class="page" style="height:{{scrollHeight}}px;background:#fff;" xmlns:wx="http://www.w3.org/1999/xhtml">
+        <view class="page__bd">
+            <view class="weui-toptips weui-toptips_warn" wx:if="{{warnFlag}}">{{warnMsg}}</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input {{usernameWarnMsg==''?'':'weui-cell_warn'}}">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">姓名</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindblur="valiuserName" bindinput="userNameInput" class="weui-input" name="username" placeholder="请输入真实姓名" value="{{user.username}}"></input>
+                    </view>
+                    <view class="weui-cell__ft">
+                        <icon color="#E64340" size="23" type="warn" wx:if="{{usernameWarnMsg!=''}}"></icon>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input weui-cell_vcode {{phoneWarnMsg==''?'':'weui-cell_warn'}}" wx:if="{{!hasPhone}}">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">手机</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindinput="phoneInput" class="weui-input" disabled="{{validateCodeBtnDisabled}}" name="phonenumber" pattern="[0-9]*" placeholder="请输入手机号码" type="number" value="{{phonenumber?phonenumber:user.phonenumber}}"></input>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input {{usernameWarnMsg==''?'':'weui-cell_warn'}}">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">年级</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindblur="valiuserName" bindinput="userNameInput" class="weui-input" name="grade" placeholder="请输入年级" value="{{user.grade}}"></input>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input {{usernameWarnMsg==''?'':'weui-cell_warn'}}">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">性别</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <radio-group bindchange="radioChange" class="" name="sex">
+                            <radio checked="{{user.sex=='男'}}" class="radio1" color="#35B4AB" value="男"></radio>
+                            <text style="margin-right:20rpx">男</text>
+                            <radio checked="{{user.sex=='女'}}" class="radio1" color="#35B4AB" value="女"></radio>
+                            <text>女</text>
+                        </radio-group>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input {{usernameWarnMsg==''?'':'weui-cell_warn'}}">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">学号</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindblur="valiuserName" bindinput="userNameInput" class="weui-input" name="studynumber" placeholder="请输入学号" value="{{user.studynumber}}"></input>
+                    </view>
+                    <view class="weui-cell__ft">
+                        <icon color="#E64340" size="23" type="warn" wx:if="{{usernameWarnMsg!=''}}"></icon>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input {{usernameWarnMsg==''?'':'weui-cell_warn'}}">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">学院</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindblur="valiuserName" bindinput="userNameInput" class="weui-input" name="school" placeholder="请输入学院" value="{{user.school}}"></input>
+                    </view>
+                    <view class="weui-cell__ft">
+                        <icon color="#E64340" size="23" type="warn" wx:if="{{usernameWarnMsg!=''}}"></icon>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input {{usernameWarnMsg==''?'':'weui-cell_warn'}}">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">专业</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindblur="valiuserName" bindinput="userNameInput" class="weui-input" name="major" placeholder="请输入专业" value="{{user.major}}"></input>
+                    </view>
+                    <view class="weui-cell__ft">
+                        <icon color="#E64340" size="23" type="warn" wx:if="{{usernameWarnMsg!=''}}"></icon>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-btn-area">
+                <button class="scan-btn {{!getDeposit?'':'active'}}" disabled="{{hasupload}}" formType="submit" loading="{{submitLoading}}">{{submitBtnText?submitBtnText:'提交'}}</button>
+            </view>
+        </view>
+    </view>
+</form>

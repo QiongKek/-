@@ -1,0 +1,88 @@
+<view wx:if="{{islogin}}">
+    <view bindtap="gotochange" class="user-container">
+        <view class="user" style="{{user.sex=='女'?' background: pink;color:#9d294a;':''}}">
+            <view class="user-icon">
+                <image mode="aspectFill" src="{{user.userInfo.avatarUrl}}"></image>
+            </view>
+            <view class="userdata">
+                <view class="username">
+                    <view class="name">{{user.userInfo.nickName}}</view>
+                </view>
+                <view class="userphone">
+                    <image src="../../images/{{user.sex=='女'?'redphone':'bluephone'}}.png"></image>
+                    <view>{{phone.toHide(user.phonenumber)}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="getmoney"></view>
+    </view>
+    <view bindtap="gotochange" class="cards">
+        <image catchtap="gotochange" class="myedit" src="../../images/edit.png"></image>
+        <view class="detail">
+            <view class="detail-container">
+                <view class="detailleft">姓名</view>
+                <view class="detailright">{{user.username}}</view>
+            </view>
+        </view>
+        <view class="detail">
+            <view class="detail-container">
+                <view class="detailleft">手机</view>
+                <view class="detailright">{{phone.toHide(user.phonenumber)}}</view>
+            </view>
+        </view>
+        <view class="detail">
+            <view class="detail-container">
+                <view class="detailleft">年级</view>
+                <view class="detailright">{{user.grade}}</view>
+            </view>
+        </view>
+        <view class="detail">
+            <view class="detail-container">
+                <view class="detailleft">性别</view>
+                <view class="detailright">{{user.sex}}</view>
+            </view>
+        </view>
+        <view class="detail">
+            <view class="detail-container">
+                <view class="detailleft">学号</view>
+                <view class="detailright">{{user.studynumber?user.studynumber:'未填写'}}</view>
+            </view>
+        </view>
+        <view class="detail">
+            <view class="detail-container">
+                <view class="detailleft">学院</view>
+                <view class="detailright">{{user.school?user.school:'未填写'}}</view>
+            </view>
+        </view>
+        <view class="detail">
+            <view class="detail-container">
+                <view class="detailleft">专业</view>
+                <view class="detailright">{{user.major?user.major:'未填写'}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="admin-container" wx:if="{{user.isAdmin}}">
+    <view class="admin">管理员入口</view>
+    <view class="cards">
+        <view>
+            <navigator class="list-container " url="/pages/admin/usermanager/usermanager">
+                <view>用户管理</view>
+                <image class="navimg" src="../../images/next.png"></image>
+            </navigator>
+        </view>
+        <view>
+            <navigator class="list-container " url="/pages/admin/order/order">
+                <view>工单管理</view>
+                <image class="navimg" src="../../images/next.png"></image>
+            </navigator>
+        </view>
+    </view>
+</view>
+<view class="bottomstyle"></view>
+<view class="btn-container" wx:if="{{!islogin}}">
+    <view>
+        <button bindgetuserinfo="onGotUserInfo" class="btn" lang="zh_CN" openType="getUserInfo">微信一键登录</button>
+    </view>
+</view>
+<wxs module="phone" src="hidephone.wxs" />
