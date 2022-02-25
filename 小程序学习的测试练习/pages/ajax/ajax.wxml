@@ -1,4 +1,0 @@
-<button bindtap="handleGet">ajax-get</button>
-<button bindtap="handlePost">ajax-post</button>
-<button bindtap="handlePut">ajax-put</button>
-<button bindtap="handleDelete">ajax-delete</button>

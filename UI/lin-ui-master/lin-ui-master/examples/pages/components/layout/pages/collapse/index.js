@@ -1,5 +1,0 @@
-Page({
-  onShareAppMessage: function () {
-
-  },
-});

@@ -1,3 +1,0 @@
-<content-title name="WaterFlow" describe="瀑布流">
-    <l-water-flow generic:l-water-flow-item="product" />
-</content-title>
